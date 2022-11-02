@@ -55,8 +55,7 @@ ROOT_URLCONF = 'djangoProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,13 +73,31 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME':'polls'
+#        'USER':'djangoProject',
+#        'PASSWORD':'123456',
+#        'HOST': 'localhost',
+#        'PORT': '',
+#    }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'new':{
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'NAME':'polls',
+       'USER':'djangoProject',
+       'PASSWORD':'123456',
+       'HOST': 'localhost',
+       'PORT': ''
+   }
     }
-}
+
 
 
 # Password validation
@@ -123,3 +140,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
